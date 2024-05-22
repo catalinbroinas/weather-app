@@ -82,13 +82,21 @@ ul {
   padding: 0;
 }
 
+/* Spacing */
+.me-1 {
+  margin-right: 0.25rem;
+}
+.me-2 {
+  margin-right: 0.5rem;
+}
+
 /* Footer */
 .footer-text {
   font-size: 1rem;
   font-weight: normal;
   color: #757575;
 }
-`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,oBAAoB;EACpB,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n}\r\n\r\n.footer {\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,oBAAoB;EACpB,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,YAAY;AACZ;EACE,qBAAqB;AACvB;AACA;EACE,oBAAoB;AACtB;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n}\r\n\r\n.footer {\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Spacing */\r\n.me-1 {\r\n  margin-right: 0.25rem;\r\n}\r\n.me-2 {\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
