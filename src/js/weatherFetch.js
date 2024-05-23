@@ -30,9 +30,27 @@ function WeatherAPI() {
         return `${url}/current.json?key=${key}&q=${location}`;
     };
 
+    const getResponse = async () => {
+        try {
+            const response = await fetch(buildUrl(), {
+                mode: 'cors'
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            return await response.json();
+        } catch (err) {
+            console.error('Error fetching weather data:', err);
+            throw err;
+        }
+    };
+
     return {
         getLocation,
-        setLocation
+        setLocation,
+        getResponse
     };
 }
 
