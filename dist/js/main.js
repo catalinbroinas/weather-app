@@ -539,6 +539,28 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/js/weatherFetch.js":
+/*!********************************!*\
+  !*** ./src/js/weatherFetch.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   WeatherAPI: () => (/* binding */ WeatherAPI)
+/* harmony export */ });
+function WeatherAPI() {
+    const request = {
+        url: 'https://api.weatherapi.com/v1',
+        key: 'b643f30100b44bfb8e8122233241705',
+        location: 'London'
+    };
+}
+
+
+
 /***/ })
 
 /******/ 	});
@@ -622,6 +644,8 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ "./src/css/style.css");
+/* harmony import */ var _weatherFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherFetch */ "./src/js/weatherFetch.js");
+
 
 })();
 

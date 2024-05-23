@@ -1,0 +1,9 @@
+function WeatherAPI() {
+    const request = {
+        url: 'https://api.weatherapi.com/v1',
+        key: 'b643f30100b44bfb8e8122233241705',
+        location: 'London'
+    };
+}
+
+export { WeatherAPI };
