@@ -23,6 +23,13 @@ function WeatherAPI() {
         request.location = value;
     };
 
+    const buildUrl = () => {
+        const url = getWeatherUrl();
+        const key = getWeatherKey();
+        const location = getLocation();
+        return `${url}/current.json?key=${key}&q=${location}`;
+    };
+
     return {
         getLocation,
         setLocation
