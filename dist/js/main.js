@@ -600,10 +600,21 @@ function WeatherAPI() {
         }
     };
 
+    const getCountry = async () => {
+        try {
+            const response = await getResponse();
+            return response.location.country;
+        } catch (err) {
+            console.error('Error fetching country data:', err);
+            throw err;
+        };
+    };
+
     return {
         getLocation,
         setLocation,
-        getResponse
+        getResponse,
+        getCountry
     };
 }
 
@@ -701,6 +712,13 @@ weather.setLocation('Oradea');
 weather.getResponse()
     .then(data => {
         console.log('Response:', data);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
+
+weather.getCountry()
+    .then(data => {
+        console.log('Country ', data);
     }).catch(err => {
         console.error('Error:', err);
     });

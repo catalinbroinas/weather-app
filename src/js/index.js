@@ -9,3 +9,10 @@ weather.getResponse()
     }).catch(err => {
         console.error('Error:', err);
     });
+
+weather.getCountry()
+    .then(data => {
+        console.log('Country ', data);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
