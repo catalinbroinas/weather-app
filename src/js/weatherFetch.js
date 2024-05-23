@@ -10,6 +10,12 @@ function WeatherAPI() {
     const setWeatherUrl = (value) => {
         request.url = value;
     };
+
+    const getWeatherKey = () => request.key;
+
+    const setWeatherKey = (value) => {
+        request.key = value;
+    };
 }
 
 export { WeatherAPI };
