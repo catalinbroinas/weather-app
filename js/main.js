@@ -695,6 +695,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _weatherFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherFetch */ "./src/js/weatherFetch.js");
 
 
+
+const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
+weather.setLocation('Oradea');
+weather.getResponse()
+    .then(data => {
+        console.log('Response:', data);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
 })();
 
 /******/ })()
