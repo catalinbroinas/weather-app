@@ -16,6 +16,17 @@ function WeatherAPI() {
     const setWeatherKey = (value) => {
         request.key = value;
     };
+
+    const getLocation = () => request.location;
+
+    const setLocation = (value) => {
+        request.location = value;
+    };
+
+    return {
+        getLocation,
+        setLocation
+    };
 }
 
 export { WeatherAPI };
