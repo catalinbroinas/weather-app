@@ -606,7 +606,7 @@ function WeatherAPI() {
             return {
                 country: response.location.country,
                 region: response.location.region,
-                city: response.location.name
+                city: response.location.name,
             };
         } catch (err) {
             console.error('Error fetching country data:', err);
@@ -614,11 +614,28 @@ function WeatherAPI() {
         };
     };
 
+    const getCurrentWeatherConditions = async () => {
+        try {
+            const response = await getResponse();
+            return {
+                degreeC: response.current.temp_c,
+                degreeF: response.current.temp_f,
+                humidity: response.current.humidity,
+                pressure: response.current.pressure_in,
+                lastUpdate: response.current.last_updated
+            };
+        } catch (err) {
+            console.error('Error fetching weather condition data:', err);
+            throw err;
+        }
+    };
+
     return {
         getWeatherLocation,
         setWeatherLocation,
         getResponse,
-        getLocation
+        getLocation,
+        getCurrentWeatherConditions
     };
 }
 
@@ -723,6 +740,14 @@ weather.getResponse()
 weather.getLocation()
     .then(data => {
         console.log(`Country ${data.country}, region ${data.region} and city ${data.city}.`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
+
+weather.getCurrentWeatherConditions()
+    .then(data => {
+        console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and 
+        atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
     }).catch(err => {
         console.error('Error:', err);
     });

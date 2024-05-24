@@ -16,3 +16,11 @@ weather.getLocation()
     }).catch(err => {
         console.error('Error:', err);
     });
+
+weather.getCurrentWeatherConditions()
+    .then(data => {
+        console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and 
+        atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
