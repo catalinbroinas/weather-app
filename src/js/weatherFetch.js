@@ -17,16 +17,16 @@ function WeatherAPI() {
         request.key = value;
     };
 
-    const getLocation = () => request.location;
+    const getWeatherLocation = () => request.location;
 
-    const setLocation = (value) => {
+    const setWeatherLocation = (value) => {
         request.location = value;
     };
 
     const buildUrl = () => {
         const url = getWeatherUrl();
         const key = getWeatherKey();
-        const location = getLocation();
+        const location = getWeatherLocation();
         return `${url}/current.json?key=${key}&q=${location}`;
     };
 
@@ -58,8 +58,8 @@ function WeatherAPI() {
     };
 
     return {
-        getLocation,
-        setLocation,
+        getWeatherLocation,
+        setWeatherLocation,
         getResponse,
         getCountry
     };
