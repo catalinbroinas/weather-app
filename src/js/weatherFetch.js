@@ -47,10 +47,14 @@ function WeatherAPI() {
         }
     };
 
-    const getCountry = async () => {
+    const getLocation = async () => {
         try {
             const response = await getResponse();
-            return response.location.country;
+            return {
+                country: response.location.country,
+                region: response.location.region,
+                city: response.location.name
+            };
         } catch (err) {
             console.error('Error fetching country data:', err);
             throw err;
@@ -61,7 +65,7 @@ function WeatherAPI() {
         getWeatherLocation,
         setWeatherLocation,
         getResponse,
-        getCountry
+        getLocation
     };
 }
 

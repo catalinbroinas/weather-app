@@ -600,10 +600,14 @@ function WeatherAPI() {
         }
     };
 
-    const getCountry = async () => {
+    const getLocation = async () => {
         try {
             const response = await getResponse();
-            return response.location.country;
+            return {
+                country: response.location.country,
+                region: response.location.region,
+                city: response.location.name
+            };
         } catch (err) {
             console.error('Error fetching country data:', err);
             throw err;
@@ -614,7 +618,7 @@ function WeatherAPI() {
         getWeatherLocation,
         setWeatherLocation,
         getResponse,
-        getCountry
+        getLocation
     };
 }
 
@@ -708,7 +712,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
-weather.setLocation('Oradea');
+weather.setWeatherLocation('Oradea');
 weather.getResponse()
     .then(data => {
         console.log('Response:', data);
@@ -716,9 +720,9 @@ weather.getResponse()
         console.error('Error:', err);
     });
 
-weather.getCountry()
+weather.getLocation()
     .then(data => {
-        console.log('Country ', data);
+        console.log(`Country ${data.country}, region ${data.region} and city ${data.city}.`);
     }).catch(err => {
         console.error('Error:', err);
     });
