@@ -1,10 +1,25 @@
 import '../css/style.css';
 import { WeatherAPI } from './weatherFetch';
-import { FormValidator } from './utility';
+import { DomUtility, FormValidator } from './utility';
+
+function DomHandler() {
+    const domUtility = DomUtility();
+    const submitButton = document.querySelector('#submit-btn');
+
+    const addEvents = () => {
+        submitButton.addEventListener('click', (event) => {
+            domUtility.rippleEffect(event.target);
+        });
+    };
+
+    return { addEvents };
+}
 
 window.addEventListener('load', () => {
     const formValidate = FormValidator('weather-form');
+    const domHandler = DomHandler();
     formValidate.addEvents();
+    domHandler.addEvents();
 });
 
 const weather = WeatherAPI();

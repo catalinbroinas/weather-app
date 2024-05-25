@@ -256,7 +256,38 @@ ul {
   font-weight: normal;
   color: #757575;
 }
-`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,kBAAkB;EAClB,oBAAoB;EACpB,yBAAyB;EACzB,sCAAsC;EACtC,UAAU;AACZ;;AAEA;EACE,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;EAClB,sCAAsC;EACtC,UAAU;AACZ;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,YAAY;AACZ;EACE,qBAAqB;AACvB;AACA;EACE,oBAAoB;AACtB;;AAEA,SAAS;AACT;EACE,kBAAkB;EAClB,sBAAsB;EACtB,aAAa;EACb,sBAAsB;EACtB,kBAAkB;EAClB,mBAAmB;EACnB,yBAAyB;EACzB,mBAAmB;EACnB,SAAS;EACT,uCAAuC;EACvC,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,YAAY;EACZ,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,qBAAqB;EACrB,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,UAAU;AACZ;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,SAAS;EACT,gCAAgC;EAChC,UAAU;EACV,iBAAiB;EACjB,cAAc;EACd,eAAe;EACf,uBAAuB;EACvB,6BAA6B;AAC/B;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,WAAW;EACX,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,MAAM;EACN,cAAc;EACd,gBAAgB;EAChB,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;;;EAGE,sBAAsB;EACtB,iBAAiB;EACjB,iBAAiB;EACjB,qBAAqB;AACvB;;AAEA;EACE,SAAS;EACT,gCAAgC;AAClC;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA,gBAAgB;AAChB;;EAEE,gBAAgB;AAClB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;EACf,cAAc;EACd,yBAAyB;EACzB,WAAW;EACX,8DAA8D;AAChE;;AAEA;;EAEE,yBAAyB;EACzB,WAAW;EACX,uCAAuC;AACzC;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  position: relative;\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n  padding: 5rem 2rem;\r\n}\r\n\r\n.footer {\r\n  position: relative;\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Spacing */\r\n.me-1 {\r\n  margin-right: 0.25rem;\r\n}\r\n.me-2 {\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Form */\r\n.form-wrapper {\r\n  position: relative;\r\n  width: max(500px, 30%);\r\n  display: flex;\r\n  flex-flow: column wrap;\r\n  padding: 2rem 3rem;\r\n  margin: 0 auto 2rem;\r\n  background-color: #e8eaf6;\r\n  border-radius: 1rem;\r\n  gap: 2rem;\r\n  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);\r\n  z-index: 2;\r\n}\r\n\r\n.form-row {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  position: relative;\r\n  padding: 1rem 0 0;\r\n  margin-top: 0.7rem;\r\n  width: 100%;\r\n}\r\n\r\n.form-row .error {\r\n  display: inline-block;\r\n  color: #d50000;\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  padding: 0;\r\n}\r\n\r\n.form-row .error.active {\r\n  padding: 0.25rem 0.5rem;\r\n}\r\n\r\n.form-control {\r\n  font-family: inherit;\r\n  width: 100%;\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n  outline: 0;\r\n  font-size: 1.3rem;\r\n  color: #2962ff;\r\n  padding: 0.5rem;\r\n  background: transparent;\r\n  transition: border-color 0.3s;\r\n}\r\n\r\n.form-control::placeholder {\r\n  color: transparent;\r\n}\r\n\r\n.form-control:placeholder-shown ~ .form-label {\r\n  font-size: 1.3rem;\r\n  cursor: text;\r\n  top: 1.5rem;\r\n  left: 0.5rem;\r\n}\r\n\r\n.form-label {\r\n  position: absolute;\r\n  top: 0;\r\n  display: block;\r\n  transition: 0.3s;\r\n  font-size: 1rem;\r\n  color: #9b9b9b;\r\n}\r\n\r\n.form-control:valid {\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n}\r\n\r\n.form-control:invalid {\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n}\r\n\r\n.form-control.valid {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.invalid {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control:focus {\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n}\r\n\r\n.form-control:focus,\r\n.form-control:valid,\r\n.form-control:invalid {\r\n  padding-bottom: 0.5rem;\r\n  font-weight: bold;\r\n  border-width: 3px;\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control:placeholder-shown {\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n}\r\n\r\n.form-control:focus:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.valid:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.invalid:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n  border-image-slice: 1;\r\n}\r\n\r\n/* reset input */\r\n.form-control:required,\r\n.form-control:invalid {\r\n  box-shadow: none;\r\n}\r\n\r\n.btn-submit {\r\n  display: inline-flex;\r\n  border: none;\r\n  padding: 10px 20px;\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  margin: 0 auto;\r\n  background-color: #2962ff;\r\n  color: #fff;\r\n  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;\r\n}\r\n\r\n.btn-submit:hover,\r\n.btn-submit:active {\r\n  background-color: #0039cb;\r\n  color: #fff;\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n"],"sourceRoot":""}]);
+
+/* Animation */
+.btn-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: ripple 1s;
+  opacity: 0;
+}
+
+/* Add animation */
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,kBAAkB;EAClB,oBAAoB;EACpB,yBAAyB;EACzB,sCAAsC;EACtC,UAAU;AACZ;;AAEA;EACE,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;EAClB,sCAAsC;EACtC,UAAU;AACZ;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,YAAY;AACZ;EACE,qBAAqB;AACvB;AACA;EACE,oBAAoB;AACtB;;AAEA,SAAS;AACT;EACE,kBAAkB;EAClB,sBAAsB;EACtB,aAAa;EACb,sBAAsB;EACtB,kBAAkB;EAClB,mBAAmB;EACnB,yBAAyB;EACzB,mBAAmB;EACnB,SAAS;EACT,uCAAuC;EACvC,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,YAAY;EACZ,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,qBAAqB;EACrB,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,UAAU;AACZ;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,SAAS;EACT,gCAAgC;EAChC,UAAU;EACV,iBAAiB;EACjB,cAAc;EACd,eAAe;EACf,uBAAuB;EACvB,6BAA6B;AAC/B;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,WAAW;EACX,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,MAAM;EACN,cAAc;EACd,gBAAgB;EAChB,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;;;EAGE,sBAAsB;EACtB,iBAAiB;EACjB,iBAAiB;EACjB,qBAAqB;AACvB;;AAEA;EACE,SAAS;EACT,gCAAgC;AAClC;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA,gBAAgB;AAChB;;EAEE,gBAAgB;AAClB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;EACf,cAAc;EACd,yBAAyB;EACzB,WAAW;EACX,8DAA8D;AAChE;;AAEA;;EAEE,yBAAyB;EACzB,WAAW;EACX,uCAAuC;AACzC;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB;;AAEA,cAAc;AACd;EACE,kBAAkB;EAClB,gBAAgB;AAClB;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,0CAA0C;EAC1C,YAAY;EACZ,aAAa;EACb,iBAAiB;EACjB,kBAAkB;EAClB,oBAAoB;EACpB,UAAU;AACZ;;AAEA,kBAAkB;AAClB;EACE;IACE,UAAU;IACV,mBAAmB;EACrB;;EAEA;IACE,UAAU;IACV,oBAAoB;EACtB;AACF","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  position: relative;\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n  padding: 5rem 2rem;\r\n}\r\n\r\n.footer {\r\n  position: relative;\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Spacing */\r\n.me-1 {\r\n  margin-right: 0.25rem;\r\n}\r\n.me-2 {\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Form */\r\n.form-wrapper {\r\n  position: relative;\r\n  width: max(500px, 30%);\r\n  display: flex;\r\n  flex-flow: column wrap;\r\n  padding: 2rem 3rem;\r\n  margin: 0 auto 2rem;\r\n  background-color: #e8eaf6;\r\n  border-radius: 1rem;\r\n  gap: 2rem;\r\n  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);\r\n  z-index: 2;\r\n}\r\n\r\n.form-row {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  position: relative;\r\n  padding: 1rem 0 0;\r\n  margin-top: 0.7rem;\r\n  width: 100%;\r\n}\r\n\r\n.form-row .error {\r\n  display: inline-block;\r\n  color: #d50000;\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  padding: 0;\r\n}\r\n\r\n.form-row .error.active {\r\n  padding: 0.25rem 0.5rem;\r\n}\r\n\r\n.form-control {\r\n  font-family: inherit;\r\n  width: 100%;\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n  outline: 0;\r\n  font-size: 1.3rem;\r\n  color: #2962ff;\r\n  padding: 0.5rem;\r\n  background: transparent;\r\n  transition: border-color 0.3s;\r\n}\r\n\r\n.form-control::placeholder {\r\n  color: transparent;\r\n}\r\n\r\n.form-control:placeholder-shown ~ .form-label {\r\n  font-size: 1.3rem;\r\n  cursor: text;\r\n  top: 1.5rem;\r\n  left: 0.5rem;\r\n}\r\n\r\n.form-label {\r\n  position: absolute;\r\n  top: 0;\r\n  display: block;\r\n  transition: 0.3s;\r\n  font-size: 1rem;\r\n  color: #9b9b9b;\r\n}\r\n\r\n.form-control:valid {\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n}\r\n\r\n.form-control:invalid {\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n}\r\n\r\n.form-control.valid {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.invalid {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control:focus {\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n}\r\n\r\n.form-control:focus,\r\n.form-control:valid,\r\n.form-control:invalid {\r\n  padding-bottom: 0.5rem;\r\n  font-weight: bold;\r\n  border-width: 3px;\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control:placeholder-shown {\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n}\r\n\r\n.form-control:focus:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.valid:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control.invalid:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n  border-image-slice: 1;\r\n}\r\n\r\n/* reset input */\r\n.form-control:required,\r\n.form-control:invalid {\r\n  box-shadow: none;\r\n}\r\n\r\n.btn-submit {\r\n  display: inline-flex;\r\n  border: none;\r\n  padding: 10px 20px;\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  margin: 0 auto;\r\n  background-color: #2962ff;\r\n  color: #fff;\r\n  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;\r\n}\r\n\r\n.btn-submit:hover,\r\n.btn-submit:active {\r\n  background-color: #0039cb;\r\n  color: #fff;\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n\r\n/* Animation */\r\n.btn-submit {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n.btn-submit span {\r\n  position: absolute;\r\n  border-radius: 50%;\r\n  background-color: rgba(255, 255, 255, 0.8);\r\n  width: 100px;\r\n  height: 100px;\r\n  margin-top: -50px;\r\n  margin-left: -50px;\r\n  animation: ripple 1s;\r\n  opacity: 0;\r\n}\r\n\r\n/* Add animation */\r\n@keyframes ripple {\r\n  from {\r\n    opacity: 1;\r\n    transform: scale(0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale(10);\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -709,8 +740,37 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DomUtility: () => (/* binding */ DomUtility),
 /* harmony export */   FormValidator: () => (/* binding */ FormValidator)
 /* harmony export */ });
+function DomUtility() {
+    // Add ripple effect to buttons
+    const rippleEffect = (btn) => {
+        const ripple = document.createElement("span");
+
+        ripple.classList.add("ripple");
+
+        btn.appendChild(ripple);
+
+        // Get position of X
+        const x = btn.clientX - btn.offsetLeft;
+
+        // Get position of Y 
+        const y = btn.clientY - btn.offsetTop;
+
+        // Position the span element 
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        // Remove span after 0.3s 
+        setTimeout(() => {
+            ripple.remove();
+        }, 300);
+    };
+
+    return { rippleEffect };
+}
+
 function FormValidator(formId) {
     const form = document.querySelector(`#${formId}`);
 
@@ -964,9 +1024,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function DomHandler() {
+    const domUtility = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.DomUtility)();
+    const submitButton = document.querySelector('#submit-btn');
+
+    const addEvents = () => {
+        submitButton.addEventListener('click', (event) => {
+            domUtility.rippleEffect(event.target);
+        });
+    };
+
+    return { addEvents };
+}
+
 window.addEventListener('load', () => {
     const formValidate = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.FormValidator)('weather-form');
+    const domHandler = DomHandler();
     formValidate.addEvents();
+    domHandler.addEvents();
 });
 
 const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
