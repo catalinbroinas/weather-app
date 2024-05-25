@@ -25,6 +25,12 @@ function FormValidator(formId) {
             }
         }
     };
+
+    const validateForm = () => {
+        form.querySelectorAll('input').forEach(input => {
+            validateField(input.id);
+        });
+    };
 }
 
 export { FormValidator };
