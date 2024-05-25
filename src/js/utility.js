@@ -36,6 +36,12 @@ function FormValidator(formId) {
         event.preventDefault();
         validateForm();
     };
+
+    const addEvents = () => {
+        form.addEventListener('submit', onSubmitHandler);
+    }
+
+    return { addEvents };
 }
 
 export { FormValidator };

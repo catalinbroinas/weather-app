@@ -724,6 +724,12 @@ function FormValidator(formId) {
         event.preventDefault();
         validateForm();
     };
+
+    const addEvents = () => {
+        form.addEventListener('submit', onSubmitHandler);
+    }
+
+    return { addEvents };
 }
 
 
@@ -918,6 +924,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+window.addEventListener('load', () => {
+    const formValidate = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.FormValidator)('weather-form');
+    formValidate.addEvents();
+});
 
 const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
 weather.setWeatherLocation('Oradea');

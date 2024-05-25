@@ -2,6 +2,11 @@ import '../css/style.css';
 import { WeatherAPI } from './weatherFetch';
 import { FormValidator } from './utility';
 
+window.addEventListener('load', () => {
+    const formValidate = FormValidator('weather-form');
+    formValidate.addEvents();
+});
+
 const weather = WeatherAPI();
 weather.setWeatherLocation('Oradea');
 weather.getResponse()
