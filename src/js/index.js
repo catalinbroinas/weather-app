@@ -1,5 +1,6 @@
 import '../css/style.css';
 import { WeatherAPI } from './weatherFetch';
+import { FormValidator } from './utility';
 
 const weather = WeatherAPI();
 weather.setWeatherLocation('Oradea');

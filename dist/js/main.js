@@ -676,6 +676,24 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/js/utility.js":
+/*!***************************!*\
+  !*** ./src/js/utility.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FormValidator: () => (/* binding */ FormValidator)
+/* harmony export */ });
+function FormValidator(formId) {
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/weatherFetch.js":
 /*!********************************!*\
   !*** ./src/js/weatherFetch.js ***!
@@ -860,6 +878,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ "./src/css/style.css");
 /* harmony import */ var _weatherFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherFetch */ "./src/js/weatherFetch.js");
+/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utility */ "./src/js/utility.js");
+
 
 
 
