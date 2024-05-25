@@ -22,7 +22,27 @@
       </header>
       <!-- Header -->
       <!-- Content -->
-      <main class="container"></main>
+      <main class="container">
+        <!-- Form -->
+        <form novalidate id="weather-form" class="form-wrapper">
+          <!-- Form Row -->
+          <div class="form-row">
+            <input
+              type="text"
+              id="city"
+              class="form-control"
+              placeholder="City"
+            />
+            <label for="city" class="form-label">City</label>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <!-- Form Row -->
+
+          <!-- Button -->
+          <button type="submit" class="btn-submit">Send</button>
+        </form>
+        <!-- Form -->
+      </main>
       <!-- Content -->
       <!-- Footer -->
       <footer class="footer">
