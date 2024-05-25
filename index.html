@@ -32,6 +32,10 @@
               id="city"
               class="form-control"
               placeholder="City"
+              minlength="3"
+              maxlength="25"
+              pattern="^[a-zA-Z\u00C0-\u017F\s'-]+$"
+              required
             />
             <label for="city" class="form-label">City</label>
             <span class="error" aria-live="polite"></span>
