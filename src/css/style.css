@@ -91,6 +91,7 @@ ul {
 
 .form-row {
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   position: relative;
   padding: 1rem 0 0;
@@ -151,6 +152,18 @@ ul {
   border-image: linear-gradient(to right, #d50000, #ff8a80);
 }
 
+.form-control.valid {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+.form-control.invalid {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #d50000, #ff8a80);
+  border-image-slice: 1;
+}
+
 .form-control:focus {
   border-image: linear-gradient(to right, #2962ff, #82b1ff);
 }
@@ -172,6 +185,18 @@ ul {
 .form-control:focus:placeholder-shown {
   border-width: 3px;
   border-image: linear-gradient(to right, #2962ff, #82b1ff);
+  border-image-slice: 1;
+}
+
+.form-control.valid:placeholder-shown {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+.form-control.invalid:placeholder-shown {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #d50000, #ff8a80);
   border-image-slice: 1;
 }
 

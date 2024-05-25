@@ -7,9 +7,13 @@ function FormValidator(formId) {
 
         if (field.validity.valid) {
             spanError.textContent = '';
-            spanError.classList.toggle('active');
+            field.classList.remove('invalid');
+            field.classList.add('valid');
+            spanError.classList.remove('active');
         } else {
-            spanError.classList.toggle('active');
+            field.classList.remove('valid');
+            field.classList.add('invalid');
+            spanError.classList.add('active');
 
             if (field.validity.valueMissing) {
                 spanError.textContent = 'This field is required.';
@@ -37,8 +41,18 @@ function FormValidator(formId) {
         validateForm();
     };
 
+    const clearForm = () => {
+        form.querySelectorAll('input').forEach(input => {
+            input.classList.remove('valid');
+            input.classList.remove('invalid');
+        });
+        form.querySelector('span.error').classList.remove('active');
+        form.querySelector('span.error').textContent = '';
+    };
+
     const addEvents = () => {
         form.addEventListener('submit', onSubmitHandler);
+        form.addEventListener('input', clearForm);
     }
 
     return { addEvents };
