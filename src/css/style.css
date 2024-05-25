@@ -47,6 +47,7 @@ ul {
 
 .container {
   background-color: #fbfbfb;
+  padding: 5rem 2rem;
 }
 
 .footer {
@@ -80,10 +81,10 @@ ul {
   display: flex;
   flex-flow: column wrap;
   padding: 2rem 3rem;
-  margin: 5rem auto;
+  margin: 0 auto 2rem;
   background-color: #e8eaf6;
   border-radius: 1rem;
-  gap: 1rem;
+  gap: 2rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
@@ -188,7 +189,7 @@ ul {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   background-color: #2962ff;
   color: #fff;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
