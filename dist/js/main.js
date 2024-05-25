@@ -61,8 +61,11 @@ ul {
 }
 
 .header {
+  position: relative;
   padding: 1.5rem 3rem;
   background-color: #e8eaf6;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .container {
@@ -70,9 +73,12 @@ ul {
 }
 
 .footer {
+  position: relative;
   padding: 1.25rem 0;
   background-color: #e8eaf6;
   text-align: center;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 /* Typography */
@@ -90,13 +96,141 @@ ul {
   margin-right: 0.5rem;
 }
 
+/* Form */
+.form-wrapper {
+  position: relative;
+  width: max(500px, 30%);
+  display: flex;
+  flex-flow: column wrap;
+  padding: 2rem 3rem;
+  margin: 5rem auto;
+  background-color: #e8eaf6;
+  border-radius: 1rem;
+  gap: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.form-row {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  padding: 1rem 0 0;
+  margin-top: 0.7rem;
+  width: 100%;
+}
+
+.form-row .error {
+  display: inline-block;
+  color: #d50000;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0;
+}
+
+.form-row .error.active {
+  padding: 0.25rem 0.5rem;
+}
+
+.form-control {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #2962ff;
+  padding: 0.5rem;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-control:placeholder-shown ~ .form-label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 1.5rem;
+  left: 0.5rem;
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.3s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form-control:valid {
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+}
+
+.form-control:invalid {
+  border-image: linear-gradient(to right, #d50000, #ff8a80);
+}
+
+.form-control:focus {
+  border-image: linear-gradient(to right, #2962ff, #82b1ff);
+}
+
+.form-control:focus,
+.form-control:valid,
+.form-control:invalid {
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  border-width: 3px;
+  border-image-slice: 1;
+}
+
+.form-control:placeholder-shown {
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+}
+
+.form-control:focus:placeholder-shown {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #2962ff, #82b1ff);
+  border-image-slice: 1;
+}
+
+/* reset input */
+.form-control:required,
+.form-control:invalid {
+  box-shadow: none;
+}
+
+.btn-submit {
+  display: inline-flex;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem auto 0;
+  background-color: #2962ff;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-submit:hover,
+.btn-submit:active {
+  background-color: #0039cb;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 /* Footer */
 .footer-text {
   font-size: 1rem;
   font-weight: normal;
   color: #757575;
 }
-`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,oBAAoB;EACpB,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,YAAY;AACZ;EACE,qBAAqB;AACvB;AACA;EACE,oBAAoB;AACtB;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n}\r\n\r\n.footer {\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Spacing */\r\n.me-1 {\r\n  margin-right: 0.25rem;\r\n}\r\n.me-2 {\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA,SAAS;AACT;EACE,4DAA4D;EAC5D,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;;;;;;;;;EASE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,WAAW;AACX;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,aAAa;EACb,iCAAiC;AACnC;;AAEA;EACE,kBAAkB;EAClB,oBAAoB;EACpB,yBAAyB;EACzB,sCAAsC;EACtC,UAAU;AACZ;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,yBAAyB;EACzB,kBAAkB;EAClB,sCAAsC;EACtC,UAAU;AACZ;;AAEA,eAAe;AACf;EACE,eAAe;EACf,SAAS;EACT,UAAU;AACZ;;AAEA,YAAY;AACZ;EACE,qBAAqB;AACvB;AACA;EACE,oBAAoB;AACtB;;AAEA,SAAS;AACT;EACE,kBAAkB;EAClB,sBAAsB;EACtB,aAAa;EACb,sBAAsB;EACtB,kBAAkB;EAClB,iBAAiB;EACjB,yBAAyB;EACzB,mBAAmB;EACnB,SAAS;EACT,uCAAuC;EACvC,UAAU;AACZ;;AAEA;EACE,aAAa;EACb,YAAY;EACZ,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,qBAAqB;EACrB,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,UAAU;AACZ;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,oBAAoB;EACpB,WAAW;EACX,SAAS;EACT,gCAAgC;EAChC,UAAU;EACV,iBAAiB;EACjB,cAAc;EACd,eAAe;EACf,uBAAuB;EACvB,6BAA6B;AAC/B;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,WAAW;EACX,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,MAAM;EACN,cAAc;EACd,gBAAgB;EAChB,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;EACE,yDAAyD;AAC3D;;AAEA;;;EAGE,sBAAsB;EACtB,iBAAiB;EACjB,iBAAiB;EACjB,qBAAqB;AACvB;;AAEA;EACE,SAAS;EACT,gCAAgC;AAClC;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,qBAAqB;AACvB;;AAEA,gBAAgB;AAChB;;EAEE,gBAAgB;AAClB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;EACf,mBAAmB;EACnB,yBAAyB;EACzB,WAAW;EACX,8DAA8D;AAChE;;AAEA;;EAEE,yBAAyB;EACzB,WAAW;EACX,uCAAuC;AACzC;;AAEA,WAAW;AACX;EACE,eAAe;EACf,mBAAmB;EACnB,cAAc;AAChB","sourcesContent":["/* Body */\r\nbody {\r\n  font-family: \"Roboto\", Arial, Verdana, Helvetica, sans-serif;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul,\r\nli,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6,\r\np {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Layout */\r\n.container-fluid {\r\n  max-width: 100vw;\r\n  min-height: 100vh;\r\n  padding: 0;\r\n  margin: 0;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n}\r\n\r\n.header {\r\n  position: relative;\r\n  padding: 1.5rem 3rem;\r\n  background-color: #e8eaf6;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n.container {\r\n  background-color: #fbfbfb;\r\n}\r\n\r\n.footer {\r\n  position: relative;\r\n  padding: 1.25rem 0;\r\n  background-color: #e8eaf6;\r\n  text-align: center;\r\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\r\n  z-index: 1;\r\n}\r\n\r\n/* Typography */\r\n.page-title {\r\n  font-size: 2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n/* Spacing */\r\n.me-1 {\r\n  margin-right: 0.25rem;\r\n}\r\n.me-2 {\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n/* Form */\r\n.form-wrapper {\r\n  position: relative;\r\n  width: max(500px, 30%);\r\n  display: flex;\r\n  flex-flow: column wrap;\r\n  padding: 2rem 3rem;\r\n  margin: 5rem auto;\r\n  background-color: #e8eaf6;\r\n  border-radius: 1rem;\r\n  gap: 1rem;\r\n  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);\r\n  z-index: 2;\r\n}\r\n\r\n.form-row {\r\n  display: flex;\r\n  flex-grow: 1;\r\n  position: relative;\r\n  padding: 1rem 0 0;\r\n  margin-top: 0.7rem;\r\n  width: 100%;\r\n}\r\n\r\n.form-row .error {\r\n  display: inline-block;\r\n  color: #d50000;\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  padding: 0;\r\n}\r\n\r\n.form-row .error.active {\r\n  padding: 0.25rem 0.5rem;\r\n}\r\n\r\n.form-control {\r\n  font-family: inherit;\r\n  width: 100%;\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n  outline: 0;\r\n  font-size: 1.3rem;\r\n  color: #2962ff;\r\n  padding: 0.5rem;\r\n  background: transparent;\r\n  transition: border-color 0.3s;\r\n}\r\n\r\n.form-control::placeholder {\r\n  color: transparent;\r\n}\r\n\r\n.form-control:placeholder-shown ~ .form-label {\r\n  font-size: 1.3rem;\r\n  cursor: text;\r\n  top: 1.5rem;\r\n  left: 0.5rem;\r\n}\r\n\r\n.form-label {\r\n  position: absolute;\r\n  top: 0;\r\n  display: block;\r\n  transition: 0.3s;\r\n  font-size: 1rem;\r\n  color: #9b9b9b;\r\n}\r\n\r\n.form-control:valid {\r\n  border-image: linear-gradient(to right, #11998e, #38ef7d);\r\n}\r\n\r\n.form-control:invalid {\r\n  border-image: linear-gradient(to right, #d50000, #ff8a80);\r\n}\r\n\r\n.form-control:focus {\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n}\r\n\r\n.form-control:focus,\r\n.form-control:valid,\r\n.form-control:invalid {\r\n  padding-bottom: 0.5rem;\r\n  font-weight: bold;\r\n  border-width: 3px;\r\n  border-image-slice: 1;\r\n}\r\n\r\n.form-control:placeholder-shown {\r\n  border: 0;\r\n  border-bottom: 2px solid #9b9b9b;\r\n}\r\n\r\n.form-control:focus:placeholder-shown {\r\n  border-width: 3px;\r\n  border-image: linear-gradient(to right, #2962ff, #82b1ff);\r\n  border-image-slice: 1;\r\n}\r\n\r\n/* reset input */\r\n.form-control:required,\r\n.form-control:invalid {\r\n  box-shadow: none;\r\n}\r\n\r\n.btn-submit {\r\n  display: inline-flex;\r\n  border: none;\r\n  padding: 10px 20px;\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  margin: 1rem auto 0;\r\n  background-color: #2962ff;\r\n  color: #fff;\r\n  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;\r\n}\r\n\r\n.btn-submit:hover,\r\n.btn-submit:active {\r\n  background-color: #0039cb;\r\n  color: #fff;\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n/* Footer */\r\n.footer-text {\r\n  font-size: 1rem;\r\n  font-weight: normal;\r\n  color: #757575;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
