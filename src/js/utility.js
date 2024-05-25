@@ -31,6 +31,11 @@ function FormValidator(formId) {
             validateField(input.id);
         });
     };
+
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+        validateForm();
+    };
 }
 
 export { FormValidator };
