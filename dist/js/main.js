@@ -811,7 +811,7 @@ function FormValidator(formId) {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        validateForm();
+        setTimeout(validateForm, 500);
     };
 
     const clearForm = () => {
@@ -826,7 +826,7 @@ function FormValidator(formId) {
     const addEvents = () => {
         form.addEventListener('submit', onSubmitHandler);
         form.addEventListener('input', clearForm);
-    }
+    };
 
     return { addEvents };
 }
