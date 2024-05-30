@@ -68,8 +68,15 @@ function WeatherAPI() {
                 degreeC: response.current.temp_c,
                 degreeF: response.current.temp_f,
                 humidity: response.current.humidity,
-                pressure: response.current.pressure_in,
-                lastUpdate: response.current.last_updated
+                pressureMb: response.current.pressure_mb,
+                lastUpdate: response.current.last_updated,
+                condition: response.current.condition.text,
+                icon: response.current.condition.icon,
+                feelsLikeC: response.current.feelslike_c,
+                feelsLikeF: response.current.feelslike_f,
+                windKph: response.current.wind_kph,
+                precipMm: response.current.precip_mm,
+                uvIndex: response.current.uv
             };
         } catch (err) {
             console.error('Error fetching weather condition data:', err);
