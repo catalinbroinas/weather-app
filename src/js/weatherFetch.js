@@ -23,6 +23,7 @@ function WeatherAPI() {
         request.location = value;
     };
 
+    // Constructs the API request URL to fetch the current day's weather data from WeatherAPI
     const buildUrl = () => {
         const url = getWeatherUrl();
         const key = getWeatherKey();
@@ -30,40 +31,56 @@ function WeatherAPI() {
         return `${url}/forecast.json?key=${key}&q=${location}`;
     };
 
+    /**
+     * Fetches weather data from the API.
+     *
+     * @returns {Promise<Object>} A promise resolving to the API response in JSON format.
+     * @throws {Error} If the response status is not OK or if fetch fails.
+    */
     const getResponse = async () => {
         try {
+            // Makes an HTTP request to the URL constructed by buildUrl()
             const response = await fetch(buildUrl(), {
                 mode: 'cors'
             });
 
+            // Checks if the HTTP response is not in the range 200-299
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
+            // Converts the response to JSON format and returns it
             return await response.json();
         } catch (err) {
+            // Displays an error in the console and throws the error for further handling
             console.error('Error fetching weather data:', err);
             throw err;
         }
     };
 
+    // Returns an object with geographic data about the location provided to the WeatherAPI
     const getLocation = async () => {
         try {
+            // Waits for the promise returned by getResponse() to resolve and assigns the result to response
             const response = await getResponse();
+
             return {
                 country: response.location.country,
                 region: response.location.region,
                 city: response.location.name,
             };
         } catch (err) {
-            console.error('Error fetching country data:', err);
+            console.error('Error fetching location data:', err);
             throw err;
         };
     };
 
+    // Return an object with current weather date from API
     const getCurrentWeatherConditions = async () => {
         try {
+            // Waits for the promise returned by getResponse() to resolve and assigns the result to response
             const response = await getResponse();
+
             return {
                 degreeC: response.current.temp_c,
                 degreeF: response.current.temp_f,
@@ -84,9 +101,12 @@ function WeatherAPI() {
         }
     };
 
+    // Returns an object with weather data about the current day from the API
     const getForecastWeatherCondition = async () => {
         try {
+            // Waits for the promise returned by getResponse() to resolve and assigns the result to response
             const response = await getResponse();
+
             return {
                 maxTempC: response.forecast.forecastday[0].day.maxtemp_c,
                 maxTempF: response.forecast.forecastday[0].day.maxtemp_f,
