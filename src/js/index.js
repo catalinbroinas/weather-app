@@ -45,3 +45,11 @@ weather.getCurrentWeatherConditions()
     }).catch(err => {
         console.error('Error:', err);
     });
+
+weather.getForecastWeatherCondition()
+    .then(data => {
+        console.log(`Max temperature is ${data.maxTempC} and min temperature is ${data.minTempC}.
+         Today is ${data.chanceOfRain}% chance of rain.`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });

@@ -1054,11 +1054,11 @@ function WeatherAPI() {
         try {
             const response = await getResponse();
             return {
-                maxTempC: response.forecast.forecastday.day.maxtemp_c,
-                maxTempF: response.forecast.forecastday.day.maxtemp_f,
-                minTempC: response.forecast.forecastday.day.mintemp_c,
-                minTempF: response.forecast.forecastday.day.mintemp_f,
-                chanceOfRain: response.forecast.forecastday.day.daily_chance_of_rain
+                maxTempC: response.forecast.forecastday[0].day.maxtemp_c,
+                maxTempF: response.forecast.forecastday[0].day.maxtemp_f,
+                minTempC: response.forecast.forecastday[0].day.mintemp_c,
+                minTempF: response.forecast.forecastday[0].day.mintemp_f,
+                chanceOfRain: response.forecast.forecastday[0].day.daily_chance_of_rain
             };
         } catch (err) {
             console.error('Error fetching weather forecast data:', err);
@@ -1207,6 +1207,14 @@ weather.getCurrentWeatherConditions()
     .then(data => {
         console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and
         atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
+
+weather.getForecastWeatherCondition()
+    .then(data => {
+        console.log(`Max temperature is ${data.maxTempC} and min temperature is ${data.minTempC}.
+         Today is ${data.chanceOfRain}% chance of rain.`);
     }).catch(err => {
         console.error('Error:', err);
     });
