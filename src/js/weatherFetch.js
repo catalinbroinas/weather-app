@@ -27,7 +27,7 @@ function WeatherAPI() {
         const url = getWeatherUrl();
         const key = getWeatherKey();
         const location = getWeatherLocation();
-        return `${url}/current.json?key=${key}&q=${location}`;
+        return `${url}/forecast.json?key=${key}&q=${location}`;
     };
 
     const getResponse = async () => {

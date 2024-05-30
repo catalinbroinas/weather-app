@@ -993,7 +993,7 @@ function WeatherAPI() {
         const url = getWeatherUrl();
         const key = getWeatherKey();
         const location = getWeatherLocation();
-        return `${url}/current.json?key=${key}&q=${location}`;
+        return `${url}/forecast.json?key=${key}&q=${location}`;
     };
 
     const getResponse = async () => {
@@ -1163,29 +1163,29 @@ window.addEventListener('load', () => {
     domHandler.addEvents();
 });
 
-// const weather = WeatherAPI();
-// weather.setWeatherLocation('Oradea');
-// weather.getResponse()
-//     .then(data => {
-//         console.log('Response:', data);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
+const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
+weather.setWeatherLocation('Oradea');
+weather.getResponse()
+    .then(data => {
+        console.log('Response:', data);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
 
-// weather.getLocation()
-//     .then(data => {
-//         console.log(`Country ${data.country}, region ${data.region} and city ${data.city}.`);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
+weather.getLocation()
+    .then(data => {
+        console.log(`Country ${data.country}, region ${data.region} and city ${data.city}.`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
 
-// weather.getCurrentWeatherConditions()
-//     .then(data => {
-//         console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and
-//         atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
+weather.getCurrentWeatherConditions()
+    .then(data => {
+        console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and
+        atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
+    }).catch(err => {
+        console.error('Error:', err);
+    });
 })();
 
 /******/ })()
