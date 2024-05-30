@@ -84,12 +84,29 @@ function WeatherAPI() {
         }
     };
 
+    const getForecastWeatherCondition = async () => {
+        try {
+            const response = await getResponse();
+            return {
+                maxTempC: response.forecast.forecastday.day.maxtemp_c,
+                maxTempF: response.forecast.forecastday.day.maxtemp_f,
+                minTempC: response.forecast.forecastday.day.mintemp_c,
+                minTempF: response.forecast.forecastday.day.mintemp_f,
+                chanceOfRain: response.forecast.forecastday.day.daily_chance_of_rain
+            };
+        } catch (err) {
+            console.error('Error fetching weather forecast data:', err);
+            throw err;
+        }
+    };
+
     return {
         getWeatherLocation,
         setWeatherLocation,
         getResponse,
         getLocation,
-        getCurrentWeatherConditions
+        getCurrentWeatherConditions,
+        getForecastWeatherCondition
     };
 }
 
