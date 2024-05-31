@@ -16,7 +16,7 @@ function DomHandler() {
     // Function to update last update time in the DOM
     const updateLastUpdate = (lastUpdate) => {
         const updateElement = document.querySelector('#update');
-        updateElement.textContent = lastUpdate;
+        updateElement.textContent = `${domUtility.formatDate(lastUpdate)}`;
     };
 
     // Function to update weather icon in the DOM

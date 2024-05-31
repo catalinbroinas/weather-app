@@ -1,3 +1,5 @@
+import { format, parseISO } from 'date-fns';
+
 function DomUtility() {
     // Add ripple effect to buttons
     const rippleEffect = (btn) => {
@@ -23,7 +25,12 @@ function DomUtility() {
         }, 300);
     };
 
-    return { rippleEffect };
+    const formatDate = (dateString) => {
+        const date = parseISO(dateString);
+        return format(date, 'EEEE dd MMMM yyyy | HH:mm');
+    };
+
+    return { rippleEffect, formatDate };
 }
 
 function FormValidator(formId) {
