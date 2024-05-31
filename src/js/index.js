@@ -151,9 +151,17 @@ function DomHandler() {
         displayWeather();
     };
 
+    const submitButtonClickHandler = () => {
+        const formValidate = FormValidator('weather-form');
+        domUtility.rippleEffect(event.target);
+        if (formValidate.checkValidate()) {
+            updateWeatherByLocation();
+        }
+    };
+
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
-            domUtility.rippleEffect(event.target);
+            submitButtonClickHandler();
         });
     };
 
