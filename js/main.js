@@ -928,6 +928,10 @@ function FormValidator(formId) {
         });
     };
 
+    const checkValidate = () => {
+        return form.checkValidity();
+    };
+
     const onSubmitHandler = (event) => {
         event.preventDefault();
         setTimeout(validateForm, 500);
@@ -947,7 +951,7 @@ function FormValidator(formId) {
         form.addEventListener('input', clearForm);
     };
 
-    return { addEvents };
+    return { addEvents, checkValidate };
 }
 
 
@@ -1336,9 +1340,17 @@ function DomHandler() {
         displayWeather();
     };
 
+    const submitButtonClickHandler = () => {
+        const formValidate = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.FormValidator)('weather-form');
+        domUtility.rippleEffect(event.target);
+        if (formValidate.checkValidate()) {
+            updateWeatherByLocation();
+        }
+    };
+
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
-            domUtility.rippleEffect(event.target);
+            submitButtonClickHandler();
         });
     };
 
