@@ -1188,6 +1188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DomHandler() {
+    const weatherAPI = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
     const domUtility = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.DomUtility)();
     const submitButton = document.querySelector('#submit-btn');
 
@@ -1264,6 +1265,51 @@ function DomHandler() {
         uvIndexElement.textContent = uvIndex;
     };
 
+    // Updates the DOM based on the location data received from the API
+    const displayLocation = async () => {
+        try {
+            const locationData = await weatherAPI.getLocation();
+            updateLocation(`${locationData.city}, ${locationData.country}`);
+        } catch (err) {
+            console.error('Error getting location data.', err);
+        }
+    };
+
+    // Updates the DOM based on the current weather data received from the API
+    const displayCurrentWeather = async () => {
+        try {
+            const currentWeatherData = await weatherAPI.getCurrentWeatherConditions();
+            updateLastUpdate(currentWeatherData.lastUpdate);
+            updateWeatherCondition(currentWeatherData.condition);
+            updateIcon(currentWeatherData.icon);
+            updateTemperature({
+                temp: currentWeatherData.degreeC,
+                feelsLike: currentWeatherData.feelsLikeC
+            });
+            updateHumidity(currentWeatherData.humidity);
+            updatePressure(currentWeatherData.pressureMb);
+            updatePrecipitation(currentWeatherData.precipMm);
+            updateUvIndex(currentWeatherData.uvIndex);
+            updateWildSpeed(currentWeatherData.windKph);
+        } catch (err) {
+            console.error('Error getting current weather data.', err);
+        }
+    };
+
+    // Updates the DOM based on the day weather data received from the API
+    const displayDayWeather = async () => {
+        try {
+            const forecastWeatherData = await weatherAPI.getForecastWeatherCondition();
+            updateTemperature({
+                maxTemp: forecastWeatherData.maxTempC,
+                minTemp: forecastWeatherData.minTempC
+            });
+            updateChanceOfRain(forecastWeatherData.chanceOfRain);
+        } catch (err) {
+            console.error('Error getting forecast weather data.', err);
+        }
+    };
+
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
             domUtility.rippleEffect(event.target);
@@ -1276,7 +1322,6 @@ function DomHandler() {
 window.addEventListener('load', () => {
     const formValidate = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.FormValidator)('weather-form');
     const domHandler = DomHandler();
-    const weather = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.WeatherAPI)();
     formValidate.addEvents();
     domHandler.addEvents();
 });
