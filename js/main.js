@@ -1310,13 +1310,24 @@ function DomHandler() {
         }
     };
 
+    // DOM update with the data provided by the API
+    const displayWeather = async () => {
+        try {
+            await displayLocation();
+            await displayCurrentWeather();
+            await displayDayWeather();
+        } catch (err) {
+            console.error('Error displaying weather data:', err);
+        }
+    };
+
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
             domUtility.rippleEffect(event.target);
         });
     };
 
-    return { addEvents };
+    return { addEvents, displayWeather };
 }
 
 window.addEventListener('load', () => {
