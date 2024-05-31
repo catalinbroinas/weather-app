@@ -144,6 +144,13 @@ function DomHandler() {
         }
     };
 
+    // Update weather data based on the location entered by the user
+    const updateWeatherByLocation = () => {
+        const input = document.querySelector(`#city`);
+        weatherAPI.setWeatherLocation(input.value);
+        displayWeather();
+    };
+
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
             domUtility.rippleEffect(event.target);
