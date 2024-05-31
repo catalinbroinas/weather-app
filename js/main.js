@@ -1223,10 +1223,18 @@ function DomHandler() {
         const minTempElement = document.querySelector('#min-temperature');
         const feelsLikeElement = document.querySelector('#feels-like');
 
-        temperatureElement.textContent = temp;
-        maxTempElement.textContent = maxTemp;
-        minTempElement.textContent = minTemp;
-        feelsLikeElement.textContent = feelsLike;
+        if (temp !== undefined) {
+            temperatureElement.textContent = `${temp}`;
+        }
+        if (feelsLike !== undefined) {
+            feelsLikeElement.textContent = `${feelsLike}`;
+        }
+        if (maxTemp !== undefined) {
+            maxTempElement.textContent = `${maxTemp}`;
+        }
+        if (minTemp !== undefined) {
+            minTempElement.textContent = `${minTemp}`;
+        }
     };
 
     // Function to update humidity in the DOM
@@ -1333,41 +1341,10 @@ function DomHandler() {
 window.addEventListener('load', () => {
     const formValidate = (0,_utility__WEBPACK_IMPORTED_MODULE_2__.FormValidator)('weather-form');
     const domHandler = DomHandler();
+    domHandler.displayWeather();
     formValidate.addEvents();
     domHandler.addEvents();
 });
-
-// const weather = WeatherAPI();
-// weather.setWeatherLocation('Oradea');
-// weather.getResponse()
-//     .then(data => {
-//         console.log('Response:', data);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
-
-// weather.getLocation()
-//     .then(data => {
-//         console.log(`Country ${data.country}, region ${data.region} and city ${data.city}.`);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
-
-// weather.getCurrentWeatherConditions()
-//     .then(data => {
-//         console.log(`Degree C ${data.degreeC}, humidity ${data.humidity} and
-//         atmospheric pressure ${data.pressure}. Last update: ${data.lastUpdate}`);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
-
-// weather.getForecastWeatherCondition()
-//     .then(data => {
-//         console.log(`Max temperature is ${data.maxTempC} and min temperature is ${data.minTempC}.
-//          Today is ${data.chanceOfRain}% chance of rain.`);
-//     }).catch(err => {
-//         console.error('Error:', err);
-//     });
 })();
 
 /******/ })()
