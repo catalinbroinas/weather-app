@@ -25,6 +25,7 @@ function DomUtility() {
         }, 300);
     };
 
+    // Convert a date string to a formatted date string in the template 'EEEE dd MMMM yyyy | HH:mm'
     const formatDate = (dateString) => {
         const date = parseISO(dateString);
         return format(date, 'EEEE dd MMMM yyyy | HH:mm');

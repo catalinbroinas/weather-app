@@ -346,6 +346,11 @@ ul {
   gap: 0.5rem;
 }
 
+.condition-text {
+  max-width: 15rem;
+  overflow-wrap: break-word;
+}
+
 /* Footer */
 .footer-text {
   font-size: 1rem;

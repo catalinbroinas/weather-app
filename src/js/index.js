@@ -151,7 +151,7 @@ function DomHandler() {
         displayWeather();
     };
 
-    const submitButtonClickHandler = () => {
+    const submitButtonClickHandler = (event) => {
         const formValidate = FormValidator('weather-form');
         domUtility.rippleEffect(event.target);
         if (formValidate.checkValidate()) {
@@ -161,7 +161,7 @@ function DomHandler() {
 
     const addEvents = () => {
         submitButton.addEventListener('click', (event) => {
-            submitButtonClickHandler();
+            submitButtonClickHandler(event);
         });
     };
 
