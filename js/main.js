@@ -5233,6 +5233,7 @@ function DomHandler() {
             updateLocation(`${locationData.city}, ${locationData.country}`);
         } catch (err) {
             console.error('Error getting location data.', err);
+            throw err;
         }
     };
 
@@ -5254,6 +5255,7 @@ function DomHandler() {
             updateWildSpeed(currentWeatherData.windKph);
         } catch (err) {
             console.error('Error getting current weather data.', err);
+            throw err;
         }
     };
 
@@ -5268,6 +5270,7 @@ function DomHandler() {
             updateChanceOfRain(forecastWeatherData.chanceOfRain);
         } catch (err) {
             console.error('Error getting forecast weather data.', err);
+            throw err;
         }
     };
 
@@ -5278,6 +5281,8 @@ function DomHandler() {
             await displayCurrentWeather();
             await displayDayWeather();
         } catch (err) {
+            const cardWrapper = document.querySelector('#card-weather');
+            cardWrapper.textContent = 'There is no information to display at this time.';
             console.error('Error displaying weather data:', err);
         }
     };
