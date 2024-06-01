@@ -8,3 +8,6 @@ Technologies used:
 * Javascript
 * Webpack
 * WeatherAPI (API)
+* date-fns
+
+<a href="https://catalinbroinas.github.io/weather-app/">Live Demo</a>
