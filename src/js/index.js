@@ -136,15 +136,35 @@ function DomHandler() {
         }
     };
 
+    // Display an alert if the location is not found it
+    const displayAlert = () => {
+        const form = document.querySelector('#weather-form');
+        const alert = domUtility.createAlert({
+            text: 'The location entered was not found.',
+            mdiIcon: 'mdi-alert'
+        });
+
+        form.after(alert);
+    };
+
+    // Remove alert if the location is found it
+    const removeAlert = () => {
+        const alert = document.querySelector('#alert-weather');
+
+        if (alert) {
+            alert.remove();
+        }
+    };
+
     // DOM update with the data provided by the API
     const displayWeather = async () => {
         try {
             await displayLocation();
             await displayCurrentWeather();
             await displayDayWeather();
+            removeAlert();
         } catch (err) {
-            const cardWrapper = document.querySelector('#card-weather');
-            cardWrapper.textContent = 'There is no information to display at this time.';
+            displayAlert();
             console.error('Error displaying weather data:', err);
         }
     };
