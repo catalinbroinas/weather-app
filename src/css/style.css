@@ -351,6 +351,34 @@ ul {
   overflow-wrap: break-word;
 }
 
+/* Alert */
+.alert {
+  width: max(500px, 30%);
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto 3rem;
+  background-color: #e8eaf6;
+  border-radius: 1rem;
+  gap: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.alert-danger {
+  border-left: 0.3rem solid #dc4c64;
+  color: #dc4c64;
+}
+
+.alert-icon {
+  font-size: 3rem;
+}
+
+.alert-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 /* Footer */
 .footer-text {
   font-size: 1rem;
