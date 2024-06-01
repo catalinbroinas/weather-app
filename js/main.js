@@ -896,13 +896,75 @@ function DomUtility() {
         }, 300);
     };
 
+    const createDOMElement = ({
+        elementTag,
+        elementClass,
+        elementId,
+        elementText,
+        elementAtrType,
+        elementAtrValue,
+        clickHandler
+    }) => {
+        const element = document.createElement(elementTag);
+
+        if (elementClass) {
+            elementClass.forEach(className => element.classList.add(className));
+        }
+
+        if (elementId) {
+            element.setAttribute('id', elementId);
+        }
+
+        if (elementAtrType) {
+            element.setAttribute(elementAtrType, elementAtrValue);
+        }
+
+        if (elementText) {
+            element.textContent = elementText;
+        }
+
+        if (clickHandler) {
+            element.addEventListener('click', clickHandler);
+        }
+
+        return element;
+    };
+
+    // Create an alert element with an icon and text
+    const createAlert = ({ text, mdiIcon }) => {
+        const alert = createDOMElement({
+            elementTag: 'div',
+            elementId: 'alert-weather',
+            elementClass: ['alert', 'alert-danger']
+        });
+        const alertIcon = createDOMElement({
+            elementTag: 'i',
+            elementClass: ['mdi', mdiIcon, 'alert-icon']
+        });
+        const alertText = createDOMElement({
+            elementTag: 'span',
+            elementClass: ['alert-text'],
+            elementText: text
+        });
+
+        alert.appendChild(alertIcon);
+        alert.appendChild(alertText);
+
+        return alert;
+    };
+
     // Convert a date string to a formatted date string in the template 'EEEE dd MMMM yyyy | HH:mm'
     const formatDate = (dateString) => {
         const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.parseISO)(dateString);
         return (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(date, 'EEEE dd MMMM yyyy | HH:mm');
     };
 
-    return { rippleEffect, formatDate };
+    return {
+        rippleEffect,
+        formatDate,
+        createDOMElement,
+        createAlert
+    };
 }
 
 function FormValidator(formId) {
@@ -5274,15 +5336,35 @@ function DomHandler() {
         }
     };
 
+    // Display an alert if the location is not found it
+    const displayAlert = () => {
+        const form = document.querySelector('#weather-form');
+        const alert = domUtility.createAlert({
+            text: 'The location entered was not found.',
+            mdiIcon: 'mdi-alert'
+        });
+
+        form.after(alert);
+    };
+
+    // Remove alert if the location is found it
+    const removeAlert = () => {
+        const alert = document.querySelector('#alert-weather');
+
+        if (alert) {
+            alert.remove();
+        }
+    };
+
     // DOM update with the data provided by the API
     const displayWeather = async () => {
         try {
             await displayLocation();
             await displayCurrentWeather();
             await displayDayWeather();
+            removeAlert();
         } catch (err) {
-            const cardWrapper = document.querySelector('#card-weather');
-            cardWrapper.textContent = 'There is no information to display at this time.';
+            displayAlert();
             console.error('Error displaying weather data:', err);
         }
     };
